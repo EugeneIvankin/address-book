@@ -1,0 +1,52 @@
+<form [formGroup]="addressForm" (ngSubmit)="submit()" class="form">
+  <div class="form__group">
+    <p class="form__title">Фамилия</p>
+    <input
+      class="form__control"
+      [ngClass]="{'invalid-field': lastName.invalid && lastName.touched}"
+      name="name"
+      formControlName="lastName"
+    >
+
+    <div
+      *ngIf="lastName.invalid && lastName.touched"
+      class="form__error"
+    >
+      <p class="form__error-title">Не указана фамилия</p>
+    </div>
+  </div>
+
+  <div class="form__group">
+    <p class="form__title">Имя</p>
+    <input class="form__control" name="name" formControlName="firstName">
+  </div>
+
+  <div class="form__group">
+    <p class="form__title">Отчество</p>
+    <input class="form__control" name="name" formControlName="patronymic">
+  </div>
+
+  <div class="form__group">
+    <p class="form__title">Телефон</p>
+    <input
+      maxlength="{{phoneLength}}"
+      class="form__control"
+      appPhoneMask
+      [ngClass]="{'invalid-field': phone.invalid && phone.touched}"
+      name="phone"
+      formControlName="phone"
+    >
+    <div
+      *ngIf="phone.invalid && phone.touched"
+      class="form__error"
+    >
+      <p class="form__error-title">Некорректный номер</p>
+    </div>
+  </div>
+
+  <div class="form__group">
+    <button class="form__button" [ngClass]="{'invalid-button': addressForm.invalid}">
+      +
+    </button>
+  </div>
+</form>

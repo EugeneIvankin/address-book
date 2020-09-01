@@ -1,0 +1,22 @@
+<div class="table">
+  <div class="table__header">
+    <p class="table__header-title">Фамилия</p>
+    <p class="table__header-title">Имя</p>
+    <p class="table__header-title">Отчество</p>
+    <p class="table__header-title">Телефон</p>
+  </div>
+
+  <div class="table__row" *ngFor="let address of addresses">
+    <i
+      class="fa fa-star table__row-favorite"
+      [ngClass]="{'row-favorite' : address.isFavorite}"
+      (click)="makeFavorite(address.id)"
+    ></i>
+    <p class="table__row-element" >{{address.lastName}}</p>
+    <p class="table__row-element" >{{address.firstName}}</p>
+    <p class="table__row-element" >{{address.patronymic}}</p>
+    <p class="table__row-element" >{{address.phone}}</p>
+    <i class="fa fa-times table__row-delete" (click)="delete(address.id)"></i>
+  </div>
+</div>
+

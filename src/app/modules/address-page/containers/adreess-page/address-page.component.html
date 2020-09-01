@@ -1,0 +1,7 @@
+<app-address-form (addNewAddress)="submitNewAddress($event)"></app-address-form>
+
+<app-address-table
+  [addresses]="addresses"
+  (deleteAddress)="deleteAddress($event)"
+  (favoriteAddress)="makeFavoriteAddress($event)"
+></app-address-table>

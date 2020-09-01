@@ -1,0 +1,52 @@
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 60px;
+
+  &__title {
+    margin: 0 0 8px 0;
+  }
+
+  &__control {
+    border-radius: 4px;
+    border: gray solid 1px;
+    font-size: 16px;
+    padding: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__error {
+    position: absolute;
+  }
+
+  &__error-title {
+    color: red;
+    margin: 0;
+  }
+
+  &__button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 7px 10px;
+    font-size: 20px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.invalid-field {
+  border-color: red;
+}
+
+.invalid-button {
+  opacity: 0.6;
+}

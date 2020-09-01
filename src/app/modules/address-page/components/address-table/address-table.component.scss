@@ -1,0 +1,56 @@
+.table {
+  padding: 0 8%;
+
+  &__header {
+    display: flex;
+    border-top: gray solid 1px;
+    padding: 0 10%;
+  }
+
+  &__header-title {
+    width: 25%;
+    margin: 8px 0;
+    font-weight: bold;
+  }
+
+  &__row {
+    display: flex;
+    border-top: gray solid 1px;
+  }
+
+  &__row-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+
+    &::before {
+      cursor: pointer;
+    }
+  }
+
+  &__row-element {
+    margin: 8px 0;
+    width: 20%;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__row-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    width: 10%;
+
+    &::before {
+      cursor: pointer;
+    }
+  }
+}
+
+.row-favorite {
+  color: goldenrod;
+}
