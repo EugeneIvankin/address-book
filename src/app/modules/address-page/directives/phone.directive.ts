@@ -10,7 +10,9 @@ export class PhoneDirective {
 
   @HostListener('ngModelChange', ['$event'])
   public onModelChange(event): void {
-    this.onInputChange(event, false);
+    if (event) {
+      this.onInputChange(event, false);
+    }
   }
 
   @HostListener('keydown.backspace', ['$event'])

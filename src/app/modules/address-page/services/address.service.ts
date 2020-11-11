@@ -33,7 +33,7 @@ export class AddressService {
   public makeFavorite(addressId: number): void {
     const index: number = this.addressesData.findIndex((address: Address) => address.id === addressId);
 
-    this.addressesData[index].isFavorite = true;
+    this.addressesData[index].isFavorite = !this.addressesData[index].isFavorite;
 
     this.addressesData.sort((a: Address, b: Address) => {
       if (a.isFavorite > b.isFavorite) {

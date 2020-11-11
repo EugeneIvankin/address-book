@@ -38,6 +38,8 @@ export class AddressFormComponent implements OnInit {
         patronymic: this.patronymic.value,
         phone: this.phone.value
       });
+
+      this.addressForm.reset();
     } else {
       this.lastName.markAsTouched();
       this.phone.markAsTouched();
